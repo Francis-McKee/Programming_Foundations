@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Canvas Practice </title>
+    </head>
+    <style>
+
+        canvas {
+            width: 200pt;
+            height: 100pt;
+            margin: 10px;
+            border: 1px solid lightgray;
+        }
+
+        input {
+            font-size: 20pt;
+        }
+
+        .orangeback {
+            background-color: orange;
+        }
+
+        .fuchsiaback {
+            background-color: fuchsia;
+        }
+
+    </style>
+    <script>
+
+        function makeRed() {
+            var divElement1 = document.getElementById("div1");
+  
+            divElement1.style.backgroundColor = "red";
+        }
+
+        function makeBlue() {
+            var divElement2 = document.getElementById("div2");
+
+            divElement2.style.backgroundColor = "blue";
+        }
+
+        function makeShapes() {
+            var divElement1 = document.getElementById("div1");
+            var divElement2 = document.getElementById("div2");
+
+            var shape1 = divElement1.getContext("2d");
+            var shape2 = divElement2.getContext("2d");
+
+            shape1.fillStyle = "white";
+            shape1.fillRect(10,10,60,60);
+
+            shape1.fillStyle = "black";
+            shape1.font = "20px Arial";
+            shape1.fillText("Black", 15,45);
+            
+            shape2.fillStyle = "black";
+            shape2.fillRect(10,10,60,60);
+
+            shape2.fillStyle = "white";
+            shape2.font = "20px Arial";
+            shape2.fillText("White", 15,45);
+        }
+
+        function clearShapes() {
+            var divElement1 = document.getElementById("div1");
+            var divElement2 = document.getElementById("div2");
+
+            var shape1 = divElement1.getContext("2d");
+            var shape2 = divElement2.getContext("2d");
+
+            divElement1.width = divElement1.width; // Reset the canvas width
+            divElement2.width = divElement2.width; // Reset the canvas width
+        }
+
+
+    </script>
+    <body>
+
+        <h1 id="t1"> Canvas Practice </h1>
+
+        <canvas id="div1" class="orangeback"></canvas>
+        <canvas id="div2" class="fuchsiaback"></canvas>
+
+        <br>
+
+        <input type="button" value="Make Red" onclick="makeRed()">
+        <input type="button" value="Make Blue" onclick="makeBlue()">
+        <input type="button" value="Add Shapes" onclick="makeShapes()">
+        <input type="button" value="Clear Shapes" onclick="clearShapes()">
+
+    </body>
+</html>
