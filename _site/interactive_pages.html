@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Changing Pages Interactively with JS</title>
+</head>
+<style>
+
+    h1 {
+        font-family: arial;
+        color: dimgray;
+    }
+
+    div {
+        width: 140pt;
+        padding: 5pt;
+        margin: 10pt;
+        border: 1px solid lightgray;
+        font-size: 16pt;
+    }
+
+    .orangeback {
+        background-color: orange;
+    }
+
+    .fuchsiaback {
+        background-color: fuchsia;
+    }
+
+    .blueback {
+        background-color: lightsteelblue;
+    }
+
+    .redback {
+        background-color: red;
+    }
+
+</style>
+<script>
+    
+    function changeColor() {
+        var divElement1 = document.getElementById("div1");
+        var divElement2 = document.getElementById("div2");
+  
+        divElement1.className = "blueback";
+        divElement2.className = "orangeback";
+    }
+
+    function changeText() {
+        var divElement1 = document.getElementById("div1");
+        var divElement2 = document.getElementById("div2");
+  
+        divElement1.innerHTML = "Erste";
+        divElement2.innerHTML = "Zweite";
+    }
+
+</script>
+<body>
+    <h1>Changing pages interactively practice</h1>
+
+    <div id="div1" class="orangeback">
+    Here is div 1
+    </div>
+
+    <div id="div2" class="fuchsiaback">
+    Here is div 2
+    </div>
+
+    <p>
+    <input type="button" value="Change Colors" onclick="changeColor()">
+    </p>
+    <p>
+    <input type="button" value="Change Text" onclick="changeText()">
+    </p>
+</body>
+</html>
